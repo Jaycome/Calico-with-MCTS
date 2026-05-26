@@ -1,19 +1,133 @@
-<p align="center">
-  <img src="https://github.com/Jaycome/Calico-with-MCTS/blob/main/calico%20cover.png"/>
-</p>
-<p><h1>Implementing Decision-Making Algorithms in Calico</h1>
-This is a digital version of board game Calico. It implements Monte Carlo Tree Search(MCTS) in order to analyse the performance of MCTS agent and other methods.
-There are two variants could be modified which are the time for MCTS agents to consider the actions that could take and the constant factor dealing with the exploration-exploitation dilemma. Besides, in this project, it includes two MCTS agents with different measures of calculating the points that possible acitons could draw, one with only considering the outcome of evaluations and the other with the points that the actions could gain.
-  </p>
-<p><h2>More Information</h2>
-For more information about the board game Calico, check out the [wiki page](https://en.wikipedia.org/wiki/Calico_(board_game)).
-</p>
-<p><h2>Download & Run</h2>
-<p><h3>Few steps to check you are able to run the project</h4>
-1. Make sure your python version is python 3.9 or newer. If you are not, take a look at [here](https://www.python.org/downloads/).<br>
-2. Make sure that you have all required packages.<br>
-3. Download the project and run it!!!
-</p></p>
-<p><h1>Feedback & Suggestions</h1>
-If you have any thoughts on the game or you have any suggestions, don't hestiate to let me know.
-</p>
+# Calico with Monte Carlo Tree Search
+
+A Python implementation of the board game **Calico** focused on AI decision-making agents. The project implements Monte Carlo Tree Search (MCTS) agents and compares decision-making behaviour under different scoring heuristics, time budgets, and exploration-exploitation settings.
+
+This project is intended as a portfolio project for demonstrating AI search, game-state modelling, simulation-based evaluation, and Python software design.
+
+## Project Goals
+
+- Implement a playable digital version of the Calico board game logic.
+- Model game states, legal actions, scoring rules, and agent decisions.
+- Implement Monte Carlo Tree Search for decision-making under uncertainty.
+- Compare different MCTS variants and evaluation heuristics.
+- Provide a reproducible structure for running experiments and analysing agent performance.
+
+## Features
+
+- Python-based Calico game logic.
+- MCTS agent implementation.
+- Alternative MCTS evaluation strategies.
+- Configurable simulation parameters, such as time budget and exploration constant.
+- Experiment-oriented structure for analysing decision quality and game outcomes.
+
+## Repository Structure
+
+```text
+Calico-with-MCTS/
+├── calico.py              # Core Calico game logic
+├── ConnectState.py        # Game state representation
+├── mcts.py                # MCTS implementation
+├── mcts2.py               # Alternative MCTS variant
+├── meta.py                # Supporting metadata / configuration
+├── docs/
+│   ├── architecture.md
+│   ├── algorithm-notes.md
+│   ├── experiment-design.md
+│   ├── test-plan.md
+│   └── resume-positioning.md
+├── examples/
+│   └── run_example.py
+├── tests/
+│   └── test_smoke.py
+└── README.md
+```
+
+> Note: Some module names are based on the current repository structure. If the implementation changes, update this section accordingly.
+
+## Tech Stack
+
+- Python 3.9+
+- Monte Carlo Tree Search (MCTS)
+- Game-state simulation
+- Heuristic evaluation
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Jaycome/Calico-with-MCTS.git
+cd Calico-with-MCTS
+```
+
+Create and activate a virtual environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # macOS / Linux
+# .venv\Scripts\activate   # Windows
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+If the project has no external dependencies, the requirements file may remain minimal.
+
+## Running the Project
+
+Run the main game or experiment script:
+
+```bash
+python calico.py
+```
+
+If you add experiment scripts later, use:
+
+```bash
+python examples/run_example.py
+```
+
+## Experiment Variables
+
+The original project focuses on two major experimental variables:
+
+1. **MCTS thinking time** — how long an agent is allowed to search before choosing an action.
+2. **Exploration constant** — the parameter controlling the exploration-exploitation balance in UCT-style MCTS.
+
+Two MCTS variants are considered:
+
+- A variant that evaluates actions mainly by final game outcome.
+- A variant that also considers immediate points gained by candidate actions.
+
+## Suggested Evaluation Metrics
+
+- Win rate
+- Average final score
+- Average decision time
+- Number of simulations per move
+- Score distribution across repeated games
+- Stability of performance across different exploration constants
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Algorithm Notes](docs/algorithm-notes.md)
+- [Experiment Design](docs/experiment-design.md)
+- [Test Plan](docs/test-plan.md)
+- [Resume Positioning](docs/resume-positioning.md)
+
+## Future Improvements
+
+- Add automated unit tests for game-state transitions and scoring rules.
+- Add command-line arguments for experiment configuration.
+- Add CSV output for repeated simulation results.
+- Add charts for comparing MCTS variants.
+- Refactor agent interfaces for easier comparison between search algorithms.
+- Add baseline agents, such as random and greedy agents.
+
+## License
+
+This project is released under the MIT License. See [LICENSE](LICENSE) for details.
