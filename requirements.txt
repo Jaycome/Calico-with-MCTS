@@ -1,2 +1,5 @@
-# Add dependencies here if needed.
-# The current project appears to be pure Python.
+numpy
+colorama
+openpyxl
+xlsxwriter
+pytest
