@@ -2,8 +2,6 @@
 
 A Python implementation of the board game **Calico** focused on AI decision-making agents. The project implements Monte Carlo Tree Search (MCTS) agents and compares decision-making behaviour under different scoring heuristics, time budgets, and exploration-exploitation settings.
 
-This project is intended as a portfolio project for demonstrating AI search, game-state modelling, simulation-based evaluation, and Python software design.
-
 ## Project Goals
 
 - Implement a playable digital version of the Calico board game logic.
@@ -34,15 +32,10 @@ Calico-with-MCTS/
 │   ├── algorithm-notes.md
 │   ├── experiment-design.md
 │   ├── test-plan.md
-│   └── resume-positioning.md
-├── examples/
-│   └── run_example.py
-├── tests/
-│   └── test_smoke.py
+│   └── development-notes.md
+├── requirements.txt
 └── README.md
 ```
-
-> Note: Some module names are based on the current repository structure. If the implementation changes, update this section accordingly.
 
 ## Tech Stack
 
@@ -74,20 +67,12 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-If the project has no external dependencies, the requirements file may remain minimal.
-
 ## Running the Project
 
 Run the main game or experiment script:
 
 ```bash
 python calico.py
-```
-
-If you add experiment scripts later, use:
-
-```bash
-python examples/run_example.py
 ```
 
 ## Experiment Variables
@@ -117,7 +102,7 @@ Two MCTS variants are considered:
 - [Algorithm Notes](docs/algorithm-notes.md)
 - [Experiment Design](docs/experiment-design.md)
 - [Test Plan](docs/test-plan.md)
-- [Resume Positioning](docs/resume-positioning.md)
+- [Development Notes](docs/development-notes.md)
 
 ## Future Improvements
 
