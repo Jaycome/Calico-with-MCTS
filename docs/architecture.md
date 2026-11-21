@@ -15,8 +15,8 @@ This project implements a digital version of Calico and focuses on AI decision-m
 calico.py
   Core game execution and main game loop.
 
-ConnectState.py
-  Game-state representation used by the search agent.
+game_state.py
+  Game state, legal moves and scoring, used by the game loop and the search agents.
 
 mcts.py
   MCTS implementation using selection, expansion, simulation, and backpropagation.

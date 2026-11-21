@@ -1,8 +1,10 @@
 """
-@author: Masoud Masoumi Moghadam
-Code Script:
-Code for running the functions that might be used in the game and the class of the gamestate
-Adapted code from "Monte-Carlo-Tree-Search-Agent-for-the-Game-of-HEX" by Masoud Masoumi Moghadam et al. at https://github.com/masouduut94/MCTS-agent-python """
+Calico game state: board, tiles, market, legal moves and scoring.
+
+Author: Wei-Chieh Huang
+The MCTS node/agent structure is adapted from "Monte-Carlo-Tree-Search-Agent-for-the-Game-of-HEX"
+by Masoud Masoumi Moghadam et al. (https://github.com/masouduut94/MCTS-agent-python).
+"""
 
 import random
 from copy import deepcopy
