@@ -6,13 +6,18 @@ from colorama import Fore, Back, Style
 from mcts import UctMctsAgent
 from mcts import Node
 from mcts2 import UctMctsAgent2
-from ConnectState import GameState
+from game_state import GameState
 # import xlsxwriter module
 import xlsxwriter
 import openpyxl
+import argparse
 if __name__ == "__main__":
-    roundTime=50
-    searchTime=0.5
+    parser = argparse.ArgumentParser(description="Play MCTS (win/loss) against MCTS (score difference) in Calico.")
+    parser.add_argument("--games", type=int, default=50, help="number of games to play (default: 50)")
+    parser.add_argument("--search-time", type=float, default=0.5, help="seconds each agent searches per move (default: 0.5)")
+    args = parser.parse_args()
+    roundTime=args.games
+    searchTime=args.search_time
     player1Win=0
     player2Win=0
     tie=0
@@ -98,7 +103,7 @@ if __name__ == "__main__":
 #MCTS vs. MCTS
 
     workbook = xlsxwriter.Workbook('MCTS4VsMCTS05.xlsx')
-    wb = openpyxl.load_workbook('MCTS4VsMCTS05.xlsx', data_only=True)
+    wb = openpyxl.Workbook()  # per-game results, saved as newMCTSVsMCTS.xlsx
 
     s1 = wb.create_sheet('worksheet1')     # add worksheet 1
     s2 = wb.create_sheet('worksheet2')     # add worksheet 2

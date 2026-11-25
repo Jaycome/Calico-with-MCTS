@@ -1,14 +1,16 @@
 """
-@author: Masoud Masoumi Moghadam
-Code Script:
-Code for running Monte Carlo Tree Search method applying the evaluation with considering win or loss alone
-Adapted code from "Monte-Carlo-Tree-Search-Agent-for-the-Game-of-HEX" by Masoud Masoumi Moghadam et al. at https://github.com/masouduut94/MCTS-agent-python """
+UCT MCTS agent that evaluates rollouts by win/loss only.
+
+Author: Wei-Chieh Huang
+The MCTS node/agent structure is adapted from "Monte-Carlo-Tree-Search-Agent-for-the-Game-of-HEX"
+by Masoud Masoumi Moghadam et al. (https://github.com/masouduut94/MCTS-agent-python).
+"""
 import math
 import time
 import random
 from copy import deepcopy
 from meta import GameMeta,MCTSMeta
-from ConnectState import GameState
+from game_state import GameState
 
 
 class Node:
