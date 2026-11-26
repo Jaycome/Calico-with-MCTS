@@ -1,5 +1,7 @@
 # Calico with Monte Carlo Tree Search
 
+[![tests](https://github.com/Jaycome/Calico-with-MCTS/actions/workflows/tests.yml/badge.svg)](https://github.com/Jaycome/Calico-with-MCTS/actions/workflows/tests.yml)
+
 A Python implementation of the board game **Calico** focused on AI decision-making agents. The project implements Monte Carlo Tree Search (MCTS) agents and compares decision-making behaviour under different scoring heuristics, time budgets, and exploration-exploitation settings.
 
 ## Project Goals
@@ -83,6 +85,14 @@ A run writes two workbooks to the working directory:
 
 The random-agent experiments used in the original study are still in `calico.py` as commented-out blocks.
 
+## Tests
+
+```bash
+pytest -q
+```
+
+The tests cover game setup, turn order, complete random games, scoring of each player's board (including a regression test for player 2's 7-point cat tokens) and that both agents return legal moves. They run on every push through GitHub Actions.
+
 ## Experiment Variables
 
 The original project focuses on two major experimental variables:
@@ -114,7 +124,6 @@ Two MCTS variants are considered:
 
 ## Future Improvements
 
-- Add automated unit tests for game-state transitions and scoring rules.
 - Add command-line arguments for experiment configuration.
 - Add CSV output for repeated simulation results.
 - Add charts for comparing MCTS variants.
