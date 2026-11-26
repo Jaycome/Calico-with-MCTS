@@ -937,7 +937,7 @@ class GameState:
                 points2FromPattern+=3
             elif(self.tile_base2[i]['token']==3):
                 points2FromPattern+=5
-            elif(self.tile_base[i]['token']==4):
+            elif(self.tile_base2[i]['token']==4):
                 points2FromPattern+=7
         points2FromGoal=self.calculate_goal_points(self.tile_base2,(6,13,16))
         points2Total=points2FromPattern+points2FromElement+points2FromGoal

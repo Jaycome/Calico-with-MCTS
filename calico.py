@@ -85,7 +85,7 @@ if __name__ == "__main__":
                 points2FromPattern+=3
             elif(state.tile_base2[i]['token']==3):
                 points2FromPattern+=5
-            elif(state.tile_base[i]['token']==4):
+            elif(state.tile_base2[i]['token']==4):
                 points2FromPattern+=7
         points2FromGoal=state.calculate_goal_points(state.tile_base2,(6,13,16))
         points2Total=points2FromPattern+points2FromElement+points2FromGoal
